@@ -49,3 +49,22 @@ func (d *DNode) Print() {
 	fmt.Println("Key: ", keyBuf.String())
 	fmt.Println("Val: ", valBuf.String())
 }
+
+// ReversePrint 顺着该节点的prev，向前打印
+func (d *DNode) ReversePrint() {
+	var (
+		keyBuf bytes.Buffer
+		valBuf bytes.Buffer
+	)
+	keyBuf.Write([]byte(cast.ToString(d.Key)))
+	valBuf.Write([]byte(cast.ToString(d.Val)))
+	for d.Prev != nil {
+		keyBuf.Write([]byte(" -> "))
+		keyBuf.Write([]byte(cast.ToString(d.Prev.Key)))
+		valBuf.Write([]byte(" -> "))
+		valBuf.Write([]byte(cast.ToString(d.Prev.Val)))
+		d = d.Prev
+	}
+	fmt.Println("Key: ", keyBuf.String())
+	fmt.Println("Val: ", valBuf.String())
+}
