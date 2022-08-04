@@ -28,15 +28,13 @@ func NewLinkedList(vals []int) *Node {
 func (n *Node) Print() {
 	var (
 		buf bytes.Buffer
-
-		t = n
 	)
 
 	buf.Write([]byte(cast.ToString(n.Val)))
-	for t.Next != nil {
+	for n.Next != nil {
 		buf.Write([]byte(" -> "))
-		buf.Write([]byte(cast.ToString(t.Next.Val)))
-		t = t.Next
+		buf.Write([]byte(cast.ToString(n.Next.Val)))
+		n = n.Next
 	}
 	fmt.Println(buf.String())
 }
