@@ -8,5 +8,5 @@ func TestDNode_Print(t *testing.T) {
 }
 func TestDNode_ReversePrint(t *testing.T) {
 	head, _ := NewDoubleLinkedList([]int{0, 1, 2}, []int{0, 1, 2})
-	head.Next.Next.ReversePrint()
+	head.Next.Next.PrevPrint()
 }

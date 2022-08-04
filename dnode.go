@@ -50,8 +50,8 @@ func (d *DNode) Print() {
 	fmt.Println("Val: ", valBuf.String())
 }
 
-// ReversePrint 顺着该节点的prev，向前打印
-func (d *DNode) ReversePrint() {
+// PrevPrint 顺着该节点的prev，向前打印
+func (d *DNode) PrevPrint() {
 	var (
 		keyBuf bytes.Buffer
 		valBuf bytes.Buffer
