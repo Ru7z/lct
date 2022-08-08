@@ -37,15 +37,15 @@ func GenRandomLinkedList() *Node {
 }
 
 // DetectCycle 是否有环, 返回入口
-func (n *Node) DetectCycle(head *Node) *Node {
-	slow, fast := head, head
+func (n *Node) DetectCycle() *Node {
+	slow, fast := n, n
 	for fast != nil {
 		if fast.Next == nil {
 			return nil
 		} // 无环
 		slow, fast = slow.Next, fast.Next.Next
 		if slow == fast { // 相遇后，fast重置为head，速度减半
-			fast = head
+			fast = n
 			for {
 				if slow == fast {
 					return fast
@@ -67,7 +67,7 @@ func (n *Node) Print() {
 		buf bytes.Buffer
 	)
 	buf.Write([]byte(cast.ToString(n.Val)))
-	if entrance := n.DetectCycle(n); entrance == nil {
+	if entrance := n.DetectCycle(); entrance == nil {
 		for n.Next != nil {
 			buf.Write([]byte(" → "))
 			buf.Write([]byte(cast.ToString(n.Next.Val)))
