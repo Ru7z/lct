@@ -40,9 +40,9 @@ func (d *DNode) Print() {
 	keyBuf.Write([]byte(cast.ToString(d.Key)))
 	valBuf.Write([]byte(cast.ToString(d.Val)))
 	for d.Next != nil {
-		keyBuf.Write([]byte(" -> "))
+		keyBuf.Write([]byte(" → "))
 		keyBuf.Write([]byte(cast.ToString(d.Next.Key)))
-		valBuf.Write([]byte(" -> "))
+		valBuf.Write([]byte(" → "))
 		valBuf.Write([]byte(cast.ToString(d.Next.Val)))
 		d = d.Next
 	}
@@ -59,9 +59,9 @@ func (d *DNode) PrevPrint() {
 	keyBuf.Write([]byte(cast.ToString(d.Key)))
 	valBuf.Write([]byte(cast.ToString(d.Val)))
 	for d.Prev != nil {
-		keyBuf.Write([]byte(" -> "))
+		keyBuf.Write([]byte(" → "))
 		keyBuf.Write([]byte(cast.ToString(d.Prev.Key)))
-		valBuf.Write([]byte(" -> "))
+		valBuf.Write([]byte(" → "))
 		valBuf.Write([]byte(cast.ToString(d.Prev.Val)))
 		d = d.Prev
 	}
