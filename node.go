@@ -48,6 +48,7 @@ func (n *Node) DetectCycle() *Node {
 			fast = n
 			for {
 				if slow == fast {
+					fmt.Println("有环, 入口: ", fast.Val)
 					return fast
 				} // 找到
 				slow, fast = slow.Next, fast.Next // 走下一步
