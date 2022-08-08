@@ -14,7 +14,7 @@ func GenRandomArray() (array []int) {
 		m         = make(map[int]struct{}, maxLength)
 		randN     int
 	)
-	rand.Seed(time.Now().Unix() / 20)
+	rand.Seed(time.Now().UnixNano())
 	length := rand.Intn(maxLength-minLength) + minLength
 	array = make([]int, length)
 	for i := 0; i < length; i++ {
@@ -40,7 +40,7 @@ func GetSortedArray() (array []int) {
 		maxLength = 7
 		randStep  = 3
 	)
-	rand.Seed(time.Now().Unix() / 20)
+	rand.Seed(time.Now().UnixNano())
 	length := rand.Intn(maxLength-minLength) + minLength
 	array = make([]int, length+1)
 	for i := 1; i <= length; i++ {
